@@ -1,39 +1,29 @@
 pipeline {
-
-    
-
    agent  any
-
-   
-
    stages{
-
       stage('clone') {
-
           steps{
-
-              sh 'pwd'
-
+              sh 'echo "Clone"'
           }
 
       }
 
-       stage('build') {
+       stage('test') {
 
           steps{
 
-              sh 'touch test-$BUILD_ID'
-
-              sh 'ls'
-
-              
-
+              sh 'echo "test"'
+            
           }
 
       }
 
    }
-
+        stage('createfile'){
+            steps{
+                sh 'touch text-$BUILD_ID'
+            }
+        }
     
 
 }
