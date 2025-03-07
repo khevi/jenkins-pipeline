@@ -6,7 +6,7 @@ pipeline {
     ECR_REPO = '585008070473.dkr.ecr.us-east-1.amazonaws.com'
    }
    stages{
-    stage('CodeScan'){
+    stage('CodeScanNormal'){
         steps{
             sh 'trivy fs . -o result.html'
             
